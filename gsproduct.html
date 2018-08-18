@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/gsproduct.css">
+</head>
+<body>
+  <div class="mmb-layout">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="back fl">
+        <a href="index.html">
+        </a>
+      </div>
+      <div class="appload fr">
+        <a href="#">
+          <img src="./images/header_app.png" alt="">
+        </a>
+      </div>
+      <h1 class="">凑单品</h1>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="main">
+      <!-- 导航 -->
+      <div class="gs-nav">
+        <ul class="clearfix">
+          <li class="selectedShop"></li>
+          <li class="selectedArea"></li>
+          <li>全部价格</li>
+        </ul>
+        <div class="gs-search"></div>
+      </div>
+      <!-- 导航分类 -->
+      <div class="second-nav">
+          <ul class="shop">
+            <!-- 渲染 -->
+          </ul>
+          <ul class="area">
+            <!-- 渲染 -->
+          </ul>
+      </div>
+
+      <!-- 商品 -->
+      <div class="gs-product">
+        <ul class="clearfix">
+          <!-- 动态渲染商品 -->
+          
+        </ul>
+
+      </div>
+
+
+      <!-- 底部 -->
+      <div class="footer">
+        <!-- 链接 -->
+        <ul>
+          <li><a href="#">登录</a></li>
+          <li><a href="#">注册</a></li>
+          <li><a href="javascript:;" class="gotop"><img src="./images/top.jpg" alt="">返回顶部</a></li>
+        </ul>
+        <p>
+          <a href="javascript:;">手机APP下载</a>
+          <a href="index.html">慢慢买手机版</a>
+          <a href="javascript:;">-- 掌上比价平台</a>
+        </p>
+        <p>m.manmanbuy.com</p>
+      </div>
+  
+    </div>
+
+    </div>
+
+
+  <!-- 店铺模板 -->
+  <script type="text/html" id="shopTmp">
+    {{ each result v i }}
+      <li data-shopid={{v.shopId}} class="{{i===0?'current':''}}">{{v.shopName}}</li>
+    {{ /each }}  
+  </script>
+
+  <!-- 地区模板 -->
+  <script type="text/html" id="areaTmp">
+    {{ each result v i }}
+      <li data-areaid={{v.areaId}}>{{v.areaName}}</li>
+    {{ /each }}  
+  </script>
+
+  <!-- 商品模板 -->
+  <script type="text/html" id="proTmp">
+    {{ each result v i }}
+      <li>
+        <a href="javascript:;">
+          <div class="pic">
+            <img src="{{v.productImg}}" alt="">
+          </div>
+          <p>{{v.productName}}</p>
+          <p>
+            <span class="fl">{{v.productPrice}}</span>
+            <span class="fr">去凑单</span>
+          </p>
+        </a>
+      </li>
+    {{ /each }}  
+  </script>
+
+  
+
+
+
+
+  
+
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/rem.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/gsproduct.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/couponproduct.css">
+</head>
+<body>
+    
+  <div class="mmb-layout">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="back fl">
+        <a href="coupon.html">
+        </a>
+      </div>
+      <div class="appload fr">
+        <a href="#">
+          <img src="./images/header_app.png" alt="">
+        </a>
+      </div>
+      <h1 class=""></h1>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="main">
+      <!-- tips -->
+      <p class="tips">--点餐前出示手机中的优惠券，即可享受优惠--</p>
+
+      <!-- 商品 -->
+      <div class="couponproduct">
+        <ul>
+          <!-- 动态渲染商品 -->
+        </ul>
+
+      </div>
+
+
+
+
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+      <!-- 链接 -->
+      <ul>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="javascript:;" class="gotop"><img src="./images/top.jpg" alt="">返回顶部</a></li>
+      </ul>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="index.html">慢慢买手机版</a>
+        <a href="javascript:;">-- 掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+
+    
+  </div>
+
+  <!-- 模态框 -->
+  <div class="modal">
+    <span class="prev"><</span>
+    <span class="next">></span>
+    <div class="img">
+      
+    </div>
+    <span class="close">×</span>
+  </div>
+  
+
+  <!-- 折扣商品列表模板 -->
+  <script type="text/html" id="proTmp">
+    {{ each result v i }}
+      <li data-index={{i}}>
+        <a href="javascript:;">
+          <div class="img fl">
+            {{@ v.couponProductImg}}
+          </div>
+          <div class="info fr">
+            <div class="title">
+              <p>{{v.couponProductName}}</p>
+              <p>{{v.couponProductPrice}}</p>
+            </div>
+            <div class="msg clearfix">
+                <span class="fl">{{v.couponProductTime}}</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    {{ /each }}
+  </script>
+
+  
+
+  
+
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/rem.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/couponproduct.js"></script>
+</body>
+</html>

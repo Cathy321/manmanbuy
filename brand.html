@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/brand.css">
+</head>
+<body>
+  <div class="mmb-layout">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="logo fl">
+        <a href="index.html">
+          <img src="./images/header_logo.png" alt="">
+        </a>
+      </div>
+      <div class="appload fr">
+        <a href="#">
+          <img src="./images/header_app.png" alt="">
+        </a>
+      </div>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="main">
+      <!-- 搜索框 -->
+      <div class="search">
+        <div class="search-input">
+          <input type="text" placeholder="请输入你想比价的商品">
+        </div>
+        <div class="search-btn">
+            <button>搜索</button>
+        </div>
+      </div>
+
+      <!-- 分类导航 -->
+      <div class="cate-nav">
+          <a href="index.html">首页 > </a>
+          <a href="category.html">全部分类 > </a>
+      </div>
+
+      <div class="device">
+        <p class="brand">平板电视哪个牌子好</p>
+      </div>
+
+      <ul class="order">
+          <!-- 渲染 -->
+          <!-- <li>
+              <a href="#">
+                <p class="clearfix">
+                  <span>1</span>
+                  <span>三星平板电视</span>
+                </p>
+                <p>30天全网销售：242408件</p>
+              </a>
+            </li> -->
+      </ul>
+
+      <div class="device">
+        <p class="saleorder">平板电视产品销量排行</p>
+      </div>
+
+      <div class="sale-list">
+        <ul>
+          <!-- 渲染 -->
+        </ul>
+      </div>
+
+      <div class="device">
+        <p class="com">平板电视最新评论</p>
+      </div>
+      <!-- 评论 -->
+      <div class="newCom">
+        <!-- <div class="compro">
+          <img src="" alt="">
+          <p></p>
+        </div>
+        <div class="newcomment">
+          <p class="userinfo clearfix">
+            <span class="fl">张三</span>
+            <span class="fr">2018/8/18</span>
+          </p>
+          <p class="comcontent">{{v.comContent}}</p>
+        </div> -->
+      </div>
+
+
+    <!-- 底部 -->
+    <div class="footer">
+      <!-- 链接 -->
+      <ul>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="javascript:;" class="gotop"><img src="./images/top.jpg" alt="">返回顶部</a></li>
+      </ul>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="index.html">慢慢买手机版</a>
+        <a href="javascript:;">-- 掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+
+  </div>
+
+  <!-- 品牌排行模板 -->
+  <script type="text/html" id="orderTmp">
+    {{ each result v i }}
+      <li>
+        <a href="productlist.html?categoryid={{ v.categoryId }}&pageid=1">
+          <p>
+            <span>{{ i+1 }}</span>
+            <span>{{ v.brandName }}</span>
+          </p>
+          <p>{{v.brandInfo}}</p>
+        </a>
+      </li>
+    {{ /each }}
+  </script>
+
+  <!-- 销售排行模板 -->
+  <script type="text/html" id="saleTmp">
+    {{ each result v i }}
+        <li data-productid="{{v.productId}}">
+          <a href="bijia.html?productid={{v.productId}}&categoryid={{v.categoryId}}" class="clearfix">
+            <div class="img fl">
+              {{@ v.productImg}}
+            </div>
+            <div class="info fr">
+                <p class="title">{{v.productName}}</p>
+                <p class="price">{{v.productPrice}}</p>
+                <p>
+                  <span>{{v.productQuote}}</span>
+                  <span>{{v.productCom}}</span>
+                </p>
+            </div>
+          </a>
+        </li>
+    {{ /each }}
+  </script>
+
+  <!-- 评论模板 -->
+  <script type="text/html" id="comTmp">
+    {{ each result v i }}
+    <div class="compro clearfix">
+        {{@ str }}
+      </div>
+      <div class="newcomment">
+        <p class="userinfo clearfix">
+          <span class="fl">{{v.comName}}</span>
+          <span class="fr">{{v.comTime}}</span>
+        </p>
+        <p class="comcontent">{{v.comContent}}</p>
+      </div>
+    {{ /each }}  
+  </script>
+
+
+
+
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/rem.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/brand.js"></script>
+</body>
+</html>

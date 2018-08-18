@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/baicaijia.css">
+</head>
+<body>
+  <div class="mmb-layout">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="back fl">
+        <a href="index.html">
+        </a>
+      </div>
+      <div class="appload fr">
+        <a href="#">
+          <img src="./images/header_app.png" alt="">
+        </a>
+      </div>
+      <h1 class="">白菜价--淘宝内部券</h1>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="main">
+      <!-- tab菜单 -->
+      <div class="menu">
+        <ul class="clearfix">
+          <!-- 渲染 -->
+        </ul>
+      </div>
+
+      <!-- 商品 -->
+      <div class="product">
+        <ul>
+          <!-- 动态渲染商品 -->
+          <li>
+            <a href="javascript:;" class="clearfix">
+              <!-- 图片 -->
+              <div class="img fl">
+                <img src="./images/2.jpg" alt="">
+              </div>
+              <!-- 商品信息 -->
+              <div class="info fr">
+                <!-- 标题 -->
+                <div class="title">
+                  <span>渲染标题的标签</span>
+                </div>
+                <!-- 价格 -->
+                <div class="pro-price">
+                  <i>券后</i> <em>¥</em>8.9 <del>¥19</del>
+                </div>
+                <!-- 进度条 -->
+                <div class="progress">
+                    <div class="bar clearfix">
+                      <!-- <span>进度条</span> -->
+                      <!-- <a href="" class="goquan" target="_blank"></a> -->
+                      <i>
+                        <em></em>
+                        <span>75%</span>
+                      </i>
+                      <b>已领75117张</b>
+                    </div>
+                </div>
+                <div class="shopping clearfix">
+                    <span>点此领10元优惠券</span>
+                    <span>下单链接</span>
+                  <!-- <a href="#">点此领10元优惠券</a>
+                  <a target="_blank">下单链接</a> -->
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+      <!-- 链接 -->
+      <ul>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="javascript:;" class="gotop"><img src="./images/top.jpg" alt="">返回顶部</a></li>
+      </ul>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="index.html">慢慢买手机版</a>
+        <a href="javascript:;">-- 掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+    <a href="#" class="backtop"> ^ </a>
+
+  </div>
+
+ <!-- 商品列表模板 -->
+ <script type="text/html" id="spTmp">
+  {{ each result v i }}
+    <li>
+      <a href="javascript:;"></a>
+        <!-- 图片 -->
+        <div class="img fl">
+          {{@ v.productImg }}
+        </div>
+        <!-- 商品信息 -->
+        <div class="info fr">
+          <!-- 标题 -->
+          <div class="title">
+              {{@ v.productName.replace(/\n/, '')}} 
+          </div>
+          <!-- 价格 -->
+          <div class="pro-price">
+            {{@ v.productPrice }}
+          </div>
+          <!-- 进度条 -->
+          <div class="progress">
+              {{@ v.productCouponRemain }}
+          </div>
+          <div class="shopping clearfix">
+              {{@ v.productCoupon }}
+              {{@ v.productHref}}
+            <!-- <a href="#">点此领10元优惠券</a>
+            <a target="_blank">下单链接</a> -->
+          </div>
+        </div>
+
+    </li>
+  {{ /each }}
+</script>
+  
+  <!-- tab菜单 -->
+  <script type="text/html" id="menuTmp">
+    {{each result v i }}
+      <li data-titleid={{v.titleId}} class="{{i===0? 'current': ''}}">
+        <a href="javascript:;">{{v.title}}</a>
+      </li>
+    {{ /each }}
+  </script>
+  
+
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/rem.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/baicaijia.js"></script>
+</body>
+</html>

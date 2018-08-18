@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/productlist.css">
+</head>
+<body>
+  <div class="mmb-layout">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="logo fl">
+        <a href="index.html">
+          <img src="./images/header_logo.png" alt="">
+        </a>
+      </div>
+      <div class="appload fr">
+        <a href="#">
+          <img src="./images/header_app.png" alt="">
+        </a>
+      </div>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="main">
+      <!-- 搜索框 -->
+      <div class="search">
+        <div class="search-input">
+          <input type="text" placeholder="请输入你想比价的商品">
+        </div>
+        <div class="search-btn">
+            <button>搜索</button>
+        </div>
+      </div>
+      <!-- 分类导航 -->
+      <div class="cate-nav clearfix">
+        <div class="left fl">
+          <!-- 渲染 -->
+        </div>
+        <div class="right fr">
+          <a href="javascript:;">筛选</a>
+        </div>
+      </div>
+
+      <!-- 商品列表  -->
+      <div class="pro-list">
+        <!-- 渲染 -->
+        <ul>
+
+        </ul>
+        <!-- 分页按钮 -->
+        <div class="page">
+          <span><a href="javascript:;" class="prev">上一页</a></span>
+          <span>
+            <select name="select" id="selectpage">
+              <!-- 渲染分页 -->
+            </select>
+          </span>
+          <span><a href="javascript:;" class="next">下一页</a></span>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+      <!-- 链接 -->
+      <ul>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="javascript:;" class="gotop"><img src="./images/top.jpg" alt="">返回顶部</a></li>
+      </ul>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="index.html">慢慢买手机版</a>
+        <a href="javascript:;">-- 掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+
+  </div>
+
+  <!-- 分类导航模板 -->
+  <script type="text/html" id="tmp">
+    {{ each result v i }}
+      <a href="index.html">首页> </a>
+      <a href="category.html">全部分类> </a>
+      <a href="javascript:;">{{v.category}}></a>
+    {{ /each }}
+  </script>
+
+  <!-- 商品模板 -->
+  <script type="text/html" id="proTmp">
+    {{ each result v i }}
+        <li>
+          <a href="bijia.html?productid={{v.productId}}&categoryid={{v.categoryId}}&category={{category}}" class="clearfix">
+            <div class="img fl">
+              {{@ v.productImg}}
+            </div>
+            <div class="info fr">
+                <p class="title">{{v.productName}}</p>
+                <p class="price">{{v.productPrice}}</p>
+                <p>
+                  <span>{{v.productQuote}}</span>
+                  <span>{{v.productCom}}</span>
+                </p>
+            </div>
+          </a>
+        </li>
+    {{ /each }}
+  </script>
+
+  <!-- 分页按钮 -->
+  <script type="text/html" id="pageTmp">
+    <%
+      for(var i=1; i <= num; i++) {
+    %>
+      <option value="{{i}}">{{i}}/{{num}}</option>
+    <%
+      }
+    %>
+  </script>
+  
+
+  
+
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/rem.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/productlist.js"></script>
+</body>
+</html>

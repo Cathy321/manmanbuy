@@ -1,0 +1,144 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-size: 16px;
+  
+}
+@color: #FF841D;
+
+.mmb-layout {
+  height: 100%;
+  max-width: 750px;
+  min-width: 320px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+  padding-top: 1rem;
+  /* 头部 */
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 100%;
+    max-width: 750px;
+    min-width: 320px;
+    background: #FF841D;
+    padding-left: .3rem;
+    padding-right: .2rem;
+    .logo {
+      width: 3.71rem;
+      height: 1rem;
+      padding: .25rem 0;
+      a {
+        display: block;
+        width: 100%;
+        height: .5rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .appload {
+      width: .68rem;
+      height: 1rem;
+      padding: .16rem 0;
+      a {
+        display: block;
+        width: 100%;
+        height: .68rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  /*搜索框*/
+  .search {
+    width: 100%;
+    height: 1rem;
+    padding: .2rem 0;
+    padding-right: 1.45rem;
+    position: relative;
+    .search-input {
+      height: 100%;
+      width: 100%;
+      padding: 0 .15rem 0 .2rem;
+      input {
+        width: 100%;
+        height: 100%;
+        background: #f1f1f1;
+        border-radius: .3rem;
+        padding-left: .4rem;
+        font-size: .2rem;
+      }
+    }
+    .search-btn {
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      width: 1.25rem;
+      height: .6rem;
+      button {
+        width: 100%;
+        height: 100%;
+        background: #FF841D;
+        color: #fff;
+        font-size: .32rem;
+        border: none;
+        border-radius: .3rem;
+      }
+    }
+
+  }
+  
+
+
+  /* 底部 */
+  .footer {
+    width: 100%;
+    height: 1.9rem;
+    background: #f1f1f1;
+    margin-top: .5rem; 
+    ul {
+      width: 100%;
+      height: .7rem;
+      border-top: .02rem solid #ccc;
+      border-bottom: .02rem solid #ccc;
+      margin-bottom: .35rem;
+      li {
+        float: left;
+        width: 33.333%;
+        border-right: .02rem solid #ccc;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          line-height: .7rem;
+          font-size: .28rem;
+          color: #666;
+          img {
+            width: 0.3rem;
+            height: 0.3rem;
+          }
+        }
+      }
+      li:last-child {
+        border-right: none;
+      }
+    }
+    p {
+      text-align: center;
+      font-size: .24rem;
+      a:first-child {
+        color: red;
+      }
+      a:nth-child(2) {
+        color: #666;
+      }
+    }
+  }
+}

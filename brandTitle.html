@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/brandTitle.css">
+</head>
+<body>
+  <div class="mmb-layout">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="logo fl">
+        <a href="index.html">
+          <img src="./images/header_logo.png" alt="">
+        </a>
+      </div>
+      <div class="appload fr">
+        <a href="#">
+          <img src="./images/header_app.png" alt="">
+        </a>
+      </div>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="main">
+      <!-- 搜索框 -->
+      <div class="search">
+        <div class="search-input">
+          <input type="text" placeholder="请输入你想比价的商品">
+        </div>
+        <div class="search-btn">
+            <button>搜索</button>
+        </div>
+      </div>
+
+      <!-- 分类导航 -->
+      <div class="cate-nav">
+          <a href="index.html">首页 > </a>
+          <a href="category.html">全部分类 > </a>
+      </div>
+
+      <p class="hot">热门品牌排行</p>
+
+      <!-- 大标题 -->
+      <div class="brandtitle">
+        <ul>
+          
+        </ul>
+      </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+      <!-- 链接 -->
+      <ul>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="javascript:;" class="gotop"><img src="./images/top.jpg" alt="">返回顶部</a></li>
+      </ul>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="index.html">慢慢买手机版</a>
+        <a href="javascript:;">-- 掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+
+  </div>
+
+  <!-- 一级分类模板 -->
+  <script type="text/html" id="titleTmp">
+    {{ each result v i }}
+      <li>
+        <a href="brand.html?brandtitleid={{v.brandTitleId}}&brandtitle={{v.brandTitle.substr(0,v.brandTitle.length-4)}}" class="down">{{v.brandTitle}}</a>
+      </li>
+    {{ /each }}
+  </script>
+
+
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/rem.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/brandTitle.js"></script>
+</body>
+</html>

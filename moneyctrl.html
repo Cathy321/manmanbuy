@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/moneyctrl.css">
+</head>
+<body>
+  <div class="mmb-layout">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="back fl">
+        <a href="index.html">
+        </a>
+      </div>
+      <div class="appload fr">
+        <a href="#">
+          <img src="./images/header_app.png" alt="">
+        </a>
+      </div>
+      <h1 class="">省钱控--最新优惠</h1>
+    </div>
+
+    <!-- 主体部分 -->
+    <div class="main">
+
+      <!-- 商品 -->
+      <div class="product">
+        <ul>
+          <!-- 动态渲染商品 -->
+        </ul>
+
+      </div>
+
+      <!-- 分页按钮 -->
+      <div class="page">
+        <span><a href="javascript:;" class="prev">上一页</a></span>
+        <span>
+          <select name="select" id="selectpage">
+            <!-- 渲染分页 -->
+          </select>
+        </span>
+        <span><a href="javascript:;" class="next">下一页</a></span>
+      </div>
+
+
+
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+      <!-- 链接 -->
+      <ul>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="javascript:;" class="gotop"><img src="./images/top.jpg" alt="">返回顶部</a></li>
+      </ul>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="index.html">慢慢买手机版</a>
+        <a href="javascript:;">-- 掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+
+  </div>
+
+
+  <!-- 折扣商品列表模板 -->
+  <script type="text/html" id="proTmp">
+    {{ each result v i }}
+      <li>
+        <a href="moneyproduct.html?productid={{v.productId}}" class="clearfix">
+          <div class="img fl">
+            {{@ v.productImgSm}}
+          </div>
+          <div class="info fr">
+            <div class="title">
+              <p>{{v.productName}} <span>{{v.productPinkage}}</span></p>
+            </div>
+            <div class="msg clearfix">
+                <span class="fl">{{v.productFrom}}|{{v.productTime}}</span>
+                <span class="fr">{{v.productComCount.substr(1,1)}}</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    {{ /each }}
+  </script>
+
+  <!-- 分页按钮 -->
+  <script type="text/html" id="pageTmp">
+    <%
+      for(var i=1; i <= num; i++) {
+    %>
+      <option value="{{i}}">{{i}}/{{num}}</option>
+    <%
+      }
+    %>
+  </script>
+  
+
+  <script src="./lib/jquery/jquery.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./js/rem.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/moneyctrl.js"></script>
+</body>
+</html>

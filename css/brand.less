@@ -1,0 +1,204 @@
+/* 分类导航 */
+.cate-nav {
+  width: 100%;
+  height: 0.75rem;
+  border-top: .02rem solid #ccc;
+  border-bottom: .02rem solid #ccc;
+  background: linear-gradient(to bottom, #fff, #EDEDED);
+  padding: 0 .15rem;
+  a {
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 0.75rem;
+    font-size: .26rem;
+  }
+}
+
+.device {
+  width: 100%;
+  height: 0.75rem;
+  border: .02rem solid #ccc;
+  border-right: none;
+  border-left: none;
+  background: #eee;
+  padding-left: .2rem;
+  p {
+    font-size: .28rem;
+    color: #802F00;
+    height: .75rem;
+    line-height: .75rem;
+    font-weight: bold;
+  }
+}
+
+ul.order {
+  width: 100%;
+  li {
+    width: 100%;
+    border-bottom: .02rem solid #E6E6E6;
+    padding: .2rem .1rem .25rem .2rem;
+    background-image: url(../images/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-size: .4rem .4rem;
+    background-position: right center;
+    a {
+      display: block;
+      width: 100%;
+      // height: 1.3rem;
+      p:first-child {
+        span:first-child {
+          float: left;
+          width: .4rem;
+          height: 0.4rem;
+          font-size: .22rem;
+          color: #fff;
+          line-height: .4rem;
+          text-align: center;
+          background: #C9C9C9;
+          margin-right: .18rem;
+        }
+        span:last-child {
+          font-size: .32rem;
+          height: 0.4rem;
+          line-height: .4rem;
+        }
+      }
+      p:last-child {
+        margin-top: .15rem;
+        font-size: .26rem;
+        line-height: 1;
+        color: #A5A5A5;
+        padding-left: .58rem;
+      }
+    }
+    &:nth-child(1) {
+      a {
+        p:first-child {
+          span:first-child {
+            background: #F10E0E;
+          }
+        }
+      }
+    }
+    &:nth-child(2) {
+      a {
+        p:first-child {
+          span:first-child {
+            background: #FF9313;
+          }
+        }
+      }
+    }
+    &:nth-child(3) {
+      a {
+        p:first-child {
+          span:first-child {
+            background: #8ADF5B;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 商品列表 */
+.sale-list {
+  width: 100%;
+  ul {
+    width: 100%;
+    li {
+      width: 100%;
+      height: 2.6rem;
+      border-bottom: .02rem solid #ccc;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: .3rem;
+        .img {
+          height: 100%;
+          width: 2rem;
+          img {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+        .info {
+          width: 4.5rem;
+          height: 100%;
+          .title {
+            font-size: .26rem;
+            line-height: .44rem;
+          }
+          .price {
+            color: #E92A00;
+            font-size: .3rem;
+            line-height: .5rem;
+          }
+          p:last-child span {
+            font-size: .24rem;
+            color: #94959F;
+            margin-right: .18rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*评论*/
+.newCom {
+  width: 100%;
+  .compro {
+    width: 100%;
+    height: 2.3rem;
+    border-top: .02rem solid #ccc;
+    padding: .3rem;
+    padding-bottom: .15rem;
+    img {
+      float: left;
+      width: 2rem;
+      height: 2rem;
+      margin-top: -.2rem;
+    }
+    p {
+      float: right;
+      width: 4.5rem;
+      font-size: .26rem;
+      line-height: .44rem;
+      color: #A0A3A5;
+    }
+  }
+  .newcomment {
+    padding: .3rem .2rem 0;
+    border: .02rem solid #C0C0C0;
+    background: #F8F8F8;
+    margin: 0 .2rem .3rem .2rem;
+    position: relative;
+    .userinfo {
+      font-size: .2rem;
+      height: 0.3rem;
+      line-height: .3rem;
+      color: #7B7B7B;
+    }
+    .comcontent {
+      margin-top: .1rem;
+      font-size: .26rem;
+      line-height: .4rem;
+    }
+    &:before {
+      content: '';
+      display: block;
+      width: 0.2rem;
+      height: 0.2rem;
+      border-top: .02rem solid #C0C0C0; 
+      border-left: .02rem solid #C0C0C0; 
+      transform: rotate(45deg);
+      background: #F8F8F8;
+      position: absolute;
+      left: .6rem;
+      top: -.12rem;
+    }
+  }
+}
